@@ -1,0 +1,242 @@
+:root {
+  --primary-color: #ec1f55;
+  --text-color: #333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #f5f5f5;
+  background-image: url(https://scontent.fhan2-3.fna.fbcdn.net/v/t1.15752-9/289885942_816489656426014_7921672270784127966_n.png?stp=dst-png_s2048x2048&_nc_cat=107&ccb=1-7&_nc_sid=ae9488&_nc_ohc=yGe0iaBQk6YAX8TXDLS&_nc_ht=scontent.fhan2-3.fna&oh=03_AVJJ_3Vd7lbSzfFJj8GMK4E6GFBWhqCufp7CndfdKbS0Rw&oe=630D5CED); 
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+html {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.player {
+  position: relative;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.player .icon-pause {
+  display: none;
+}
+
+.player.playing .icon-pause {
+  display: inline-block;
+}
+
+.player.playing .icon-play {
+  display: none;
+}
+
+.dashboard {
+  padding: 16px 16px 14px;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 480px;
+  border-bottom: 1px solid #ebebeb;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+ background-image: linear-gradient(180deg, rgb(185, 121, 214), rgb(221, 185, 213));
+}
+/* HEADER */
+header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+header h4 {
+  color: var(--primary-color);
+  font-size: 14px;
+}
+
+header h2 {
+  color: var(--text-color);
+  font-size: 20px;
+}
+
+header h4:hover {
+  color: coral;
+  font-size: 14px;
+}
+header h2:hover {
+  color: #fff;
+  font-size: 20px;
+}
+/* CD */
+#cd-soundwave {
+  background: url(picture/soundwave.png) no-repeat center/contain;
+  z-index: -1;
+}
+
+#cd-soundwave.active {
+  animation: soundBeats 2s infinite;
+}
+
+#cd {
+  display: flex;
+  margin: auto;
+  width: 200px;
+
+}
+
+#cd-thumb {
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 50%;
+  background-color: #333;
+  background-size: cover;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(15, 98, 192, 0.4);
+}
+
+/* CONTROL */
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 18px 0 8px 0;
+}
+
+.control .btn {
+  color: #666;
+  padding: 18px;
+  font-size: 18px;
+}
+
+.control .btn.active {
+  color: var(--primary-color);
+}
+
+.control .btn-toggle-play {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+}
+
+#progress {
+  width: 100%;
+  -webkit-appearance: none;
+  height: 6px;
+  background: #cacfc8;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+#progress::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 6px;
+  background-color: rgb(230, 27, 20);
+  cursor: pointer;
+}
+
+/* PLAYLIST */
+.playlist {
+  margin-top: 408px;
+  padding: 12px;
+  background-origin: content-box;
+}
+
+.song {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  background-color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  background-image: url(http://www.elleman.vn/wp-content/uploads/2017/08/18/hinh-anh-dep-1.jpg);
+ 
+}
+.song:hover{
+
+  box-shadow: 0 0  10px rgba(9, 243, 146, 0.795);
+}
+
+.song.active {
+  background-color: var(--primary-color);
+  box-shadow: 0 0 10px rgba(228, 21, 21, 0.603);
+}
+
+.song:active {
+  opacity: 0.8;
+}
+
+.song.active .option,
+.song.active .author,
+.song.active .title {
+  color: #fff;
+}
+
+.song .thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-size: cover;
+  margin: 0 8px;
+}
+
+.song .body {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.song .title {
+  font-size: 18px;
+  color: rgba(117, 185, 71, 0.781);
+}
+
+.song .author {
+  font-size: 12px;
+  color: #999;
+}
+
+.song .option {
+  padding: 16px 8px;
+  color: #999;
+  font-size: 18px;
+}
+
+
+.btn .active{
+   color: #ec1f55;  
+}
+
+
+.btn-repeat:hover{
+  color: rgba(16, 96, 187, 0.5);
+}
+
+.btn-prev:hover{
+  color: rgba(16, 96, 187, 0.5);
+}
+
+.btn-next:hover{
+  color: rgba(16, 96, 187, 0.5);
+}
+
+.btn-random:hover{
+  color: rgba(16, 96, 187, 0.5);
+}
